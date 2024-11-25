@@ -1,6 +1,6 @@
-import "../css/background.css" assert { type: "css" };
+
 import "../css/style.css" assert { type: "css" };
-import { DOMSelectors } from "./domselectors";
+
 
 const form = DOMSelectors.itemSearchForm;
 
