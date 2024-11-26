@@ -1,0 +1,65 @@
+Variable.css
+:root {
+  --common: #a6acb1;
+  --rare: #0075db;
+  --epic: #b056db;
+  --legendary: #ffcc33;
+  --champion: #ff5733;
+  --common--outline: #cdcdcd;
+  --rare--outline: #60b6f2;
+  --epic--outline: #dfa0e1;
+  --legendary--outline: #ffd700;
+  --champion--outline: #ff8a66;
+}
+
+.common {
+  background-color: var(--common);
+  border: 20px solid;
+  box-shadow: 0 10px 20px 0 var(--common--outline);
+  border-color: var(--common--outline);
+}
+
+.rare {
+  background-color: var(--rare);
+  border: 20px solid;
+  box-shadow: 0 10px 20px 0 var(--rare--outline);
+  border-color: var(--rare--outline);
+}
+
+.epic {
+  background-color: var(--epic);
+  border: 20px solid;
+  box-shadow: 0 10px 20px 0 var(--epic--outline);
+  border-color: var(--epic--outline);
+}
+
+.legendary {
+  background-color: var(--legendary);
+  border: 20px solid;
+  box-shadow: 0 10px 20px 0 var(--legendary--outline);
+  border-color: var(--legendary--outline);
+}
+
+.champion {
+  background-color: var(--champion);
+  border: 20px solid;
+  box-shadow: 0 10px 20px 0 var(--champion--outline);
+  border-color: var(--champion--outline);
+}
+
+/* Optional: Theme-specific effects for unique cards (e.g., Lava Hound, Electro Wizard) */
+.lava {
+  background: url('/lava-hound.gif');
+  border: 20px solid;
+  box-shadow: 0 10px 20px 0 var(--champion--outline);
+  border-color: var(--champion--outline);
+  background-size: cover;
+}
+
+.electro {
+  background: url('/electro-wizard.gif');
+  border: 20px solid;
+  box-shadow: 0 10px 20px 0 var(--epic--outline);
+  border-color: var(--epic--outline);
+  background-size: cover;
+}
