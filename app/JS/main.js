@@ -27,7 +27,7 @@ function cardCreator(card) {
 
 async function getClashRoyaleCards() {
   try {
-    const response = await fetch(`https://proxy.royaleapi.dev/v1/cards`, {
+    const response = await fetch(`https://openlibrary.org/search.json?`, {
       headers: {
         Authorization: "Bearer YOUR_API_KEY_HERE",
       },
@@ -59,7 +59,7 @@ async function cardSearch(input) {
     if (!card) {
       throw new Error("Card not found");
     }
-    DOMSelectors.h1.innerHTML = "Clash Royale API";
+    DOMSelectors.h1.innerHTML = "BOOK API";
     DOMSelectors.itemcontainer.innerHTML = "";
     cardCreator(card);
   } catch (error) {
@@ -80,7 +80,7 @@ form.addEventListener("submit", function (event) {
 
 DOMSelectors.resetbutton.addEventListener("click", function (event) {
   event.preventDefault();
-  DOMSelectors.h1.innerHTML = "Clash Royale API";
+  DOMSelectors.h1.innerHTML = "BOOK API";
   DOMSelectors.itemcontainer.innerHTML = "";
   DOMSelectors.itemSearchValue.value = "";
   DOMSelectors.h2.innerHTML = "Now showing all cards";
