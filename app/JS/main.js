@@ -57,4 +57,4 @@ DOMSelectors.resetbutton.addEventListener("click", function () {
   DOMSelectors.itemcontainer.innerHTML = "";
   DOMSelectors.itemSearchValue.value = "";
 });
-kjknkn
+
