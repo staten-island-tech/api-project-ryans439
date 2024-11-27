@@ -2,26 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>BOOK-API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOK API</title>
     <link rel="icon" type="image/x-icon" href="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/old-books-theresa-tahara.jpg">
-    <img class="books" href = "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/old-books-theresa-tahara.jpg"></img>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/rarity.css" />
   </head>
   <body>
     <header>
       <div class="header--search">
         <h1 tabindex="0" class="heading">BOOK API</h1>
-        <form action="" class="form">
-          <input type="text" name="name"  class="name" required="" placeholder="item.." aria-label="API Search Here"/>
-          <input type="submit" name="submit" value="Search" class="searchButton" required=""/>
-          <button class="resetbutton">Reset</button>
+        <form class="form">
+          <input type="text" name="name" class="name" required placeholder="Search for a book..." aria-label="API Search Here" />
+          <input type="submit" name="submit" value="Search" class="searchButton" />
+          <button type="button" class="resetbutton">Reset</button>
         </form>
       </div>
     </header>
-  <div class="heading2">
-    <h2 tabindex="0" class="heading" id="subhead">Newly Searched Books</h2>
-  </div>
+    <div class="heading2">
+      <h2 tabindex="0" id="subhead">Newly Searched Books</h2>
+    </div>
     <div class="itemcontainer"></div>
+    <!-- Include JavaScript file -->
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

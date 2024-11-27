@@ -1,89 +1,60 @@
-import "../css/style.css" assert { type: "css" };
+const DOMSelectors = {
+  itemSearchForm: document.querySelector(".form"),
+  itemSearchValue: document.querySelector(".name"),
+  itemcontainer: document.querySelector(".itemcontainer"),
+  h1: document.querySelector(".heading"),
+  h2: document.querySelector("#subhead"),
+  resetbutton: document.querySelector(".resetbutton"),
+};
 
-
-const form = DOMSelectors.itemSearchForm;
-
-function cardCreator(card) {
-  DOMSelectors.itemcontainer.innerHTML = "";
+function cardCreator(book) {
   const cardElement = document.createElement("div");
   cardElement.classList.add("card");
   cardElement.innerHTML = `
-      <img src="${card.iconUrls.medium}" class="itemicon" alt="Picture of ${card.name}">
-      <h2 tabindex="0" class="itemname">${card.name}</h2>
-      <div class="dropdownMenu">
-        <details>
-          <summary>
-            Information
-          </summary>
-          <p tabindex="0" class="description">Description: "${card.description || 'No description available'}"</p>
-          <p tabindex="0" class="itemtyperarity">Rarity: ${card.rarity}</p>
-          <p tabindex="0" class="elixirCost">Elixir Cost: ${card.elixirCost || 'N/A'}</p>
-          <p tabindex="0" class="arena">Arena: ${card.arena || 'Any'}</p>
-      </div>`;
+    <h2 tabindex="0" class="itemname">${book.title || "No title available"}</h2>
+    <p tabindex="0" class="author">Author: ${book.author_name?.join(", ") || "Unknown"}</p>
+    <p tabindex="0" class="first-publish">First Published: ${book.first_publish_year || "Unknown"}</p>
+    <div class="dropdownMenu">
+      <details>
+        <summary>More Information</summary>
+        <p tabindex="0" class="subject">Subjects: ${book.subject?.join(", ") || "No subjects available"}</p>
+        <p tabindex="0" class="isbn">ISBN: ${book.isbn?.join(", ") || "No ISBN available"}</p>
+      </details>
+    </div>`;
   DOMSelectors.itemcontainer.appendChild(cardElement);
-  cardElement.classList.add(`${card.rarity.toLowerCase()}`);
-  cardElement.id = `${card.name.replace(/\s+/g, "-").toLowerCase()}`;
 }
 
-async function getClashRoyaleCards() {
+// Function to fetch and display books
+async function getBooks(query = "") {
   try {
-    const response = await fetch(`https://openlibrary.org/search.json?`, {
-      headers: {
-        Authorization: "Bearer YOUR_API_KEY_HERE",
-      },
-    });
-    const data = await response.json();
-    const cards = data.items;
-    cards.forEach((card) => cardCreator(card));
+    const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
     if (!response.ok) {
-      throw new Error(data.error.message);
+      throw new Error("Error fetching books.");
     }
-  } catch (error) {
-    console.error(error);
-    DOMSelectors.h1.innerHTML = "Error fetching Clash Royale cards.";
-  }
-}
-
-async function cardSearch(input) {
-  try {
-    const response = await fetch(
-      `https://proxy.royaleapi.dev/v1/cards`,
-      {
-        headers: {
-          Authorization: "Bearer YOUR_API_KEY_HERE",
-        },
-      }
-    );
     const data = await response.json();
-    const card = data.items.find((c) => c.name.toLowerCase() === input.toLowerCase());
-    if (!card) {
-      throw new Error("Card not found");
-    }
-    DOMSelectors.h1.innerHTML = "BOOK API";
+    const books = data.docs.slice(0, 10);
     DOMSelectors.itemcontainer.innerHTML = "";
-    cardCreator(card);
+    books.forEach((book) => cardCreator(book));
+    DOMSelectors.h1.innerHTML = books.length ? "Search Results" : "No books found.";
   } catch (error) {
     console.error(error);
-    DOMSelectors.h1.innerHTML =
-      "Your card wasn't found. Maybe you spelt it wrong?";
-    DOMSelectors.h2.innerHTML = "";
+    DOMSelectors.h1.innerHTML = "Error fetching book data.";
   }
 }
 
-getClashRoyaleCards();
-
-form.addEventListener("submit", function (event) {
+DOMSelectors.itemSearchForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const input = DOMSelectors.itemSearchValue.value;
-  cardSearch(input);
+  const input = DOMSelectors.itemSearchValue.value.trim();
+  if (input) {
+    getBooks(input);
+  } else {
+    DOMSelectors.h1.innerHTML = "Please enter a search term.";
+  }
 });
 
-DOMSelectors.resetbutton.addEventListener("click", function (event) {
-  event.preventDefault();
-  DOMSelectors.h1.innerHTML = "BOOK API";
+
+DOMSelectors.resetbutton.addEventListener("click", function () {
+  DOMSelectors.h1.innerHTML = "Welcome to the Book API!";
   DOMSelectors.itemcontainer.innerHTML = "";
   DOMSelectors.itemSearchValue.value = "";
-  DOMSelectors.h2.innerHTML = "Now showing all cards";
-  getClashRoyaleCards();
 });
-
