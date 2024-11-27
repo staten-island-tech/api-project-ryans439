@@ -24,7 +24,6 @@ function cardCreator(book) {
   DOMSelectors.itemcontainer.appendChild(cardElement);
 }
 
-// Function to fetch and display books
 async function getBooks(query = "") {
   try {
     const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
@@ -58,3 +57,4 @@ DOMSelectors.resetbutton.addEventListener("click", function () {
   DOMSelectors.itemcontainer.innerHTML = "";
   DOMSelectors.itemSearchValue.value = "";
 });
+kjknkn
