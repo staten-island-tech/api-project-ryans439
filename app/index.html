@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOK API</title>
     <link rel="icon" type="image/x-icon" href="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/old-books-theresa-tahara.jpg">
-    <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
-    <header>
-      <div class="search-container">
-        <h1 tabindex="0" class="heading">BOOK API</h1>
-        <form class="form">
-          <input type="text" name="name" class="name" required placeholder="Search for a book..." aria-label="API Search Here" />
-          <input type="submit" name="submit" value="Search" class="searchButton" />
-          <button type="button" class="resetbutton">Reset</button>
+  <body class="bg-white text-black font-sans m-0 p-0 box-border">
+    <header class="bg-brown-700 text-white py-4 text-center">
+      <h1 tabindex="0" class="m-0 text-3xl">BOOK API</h1>
+      <div class="search-container flex flex-col items-center mt-6">
+        <form class="form flex mt-4">
+          <input type="text" name="name" class="p-2 text-base w-64 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search for a book..." aria-label="API Search Here" />
+          <input type="submit" name="submit" value="Search" class="py-2 px-4 text-base bg-brown-600 text-white border-none rounded-md cursor-pointer hover:bg-brown-500 focus:ring-2 focus:ring-blue-500" />
+          <button type="button" class="resetbutton py-2 px-4 text-base bg-brown-600 text-white border-none rounded-md cursor-pointer hover:bg-brown-500 focus:ring-2 focus:ring-blue-500">Reset</button>
         </form>
       </div>
     </header>
-    <div class="heading2">
+    <div class="heading2 mt-8 text-xl text-center font-semibold">
       <h2 tabindex="0" id="subhead">Newly Searched Books</h2>
     </div>
-    <div class="itemcontainer"></div>
+    <div class="itemcontainer flex flex-wrap justify-center gap-4 my-6"></div>
+
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
