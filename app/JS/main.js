@@ -19,7 +19,6 @@ function cardCreator(book) {
       <details>
         <summary class="font-semibold cursor-pointer text-indigo-500">More Information</summary>
         <p tabindex="0" class="subject text-sm text-gray-600">Subjects: ${book.subject?.join(", ") || "No subjects available"}</p>
-        <p tabindex="0" class="isbn text-sm text-gray-600">ISBN: ${book.isbn?.join(", ") || "No ISBN available"}</p>
       </details>
     </div>
   `;
@@ -55,7 +54,9 @@ DOMSelectors.itemSearchForm.addEventListener("submit", function (event) {
 });
 
 DOMSelectors.resetbutton.addEventListener("click", function () {
-  DOMSelectors.h1.innerHTML = "Welcome to the Book API!";
+  console.log('hello'); 
+  DOMSelectors.h1.innerHTML = "BOOK API";
   DOMSelectors.itemcontainer.innerHTML = '';
   DOMSelectors.itemSearchValue.value = '';
 });
+
