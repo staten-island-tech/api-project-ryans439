@@ -51,10 +51,8 @@ DOMSelectors.itemSearchForm.addEventListener("submit", function (event) {
   }
 });
 
-
 DOMSelectors.resetbutton.addEventListener("click", function () {
   DOMSelectors.h1.innerHTML = "Welcome to the Book API!";
   DOMSelectors.itemcontainer.innerHTML = "";
   DOMSelectors.itemSearchValue.value = "";
 });
-

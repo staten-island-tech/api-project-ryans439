@@ -1,87 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  
-  header {
-    background-color: #5d4037;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  .header--search {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  form {
-    margin-top: 1rem;
-  }
-  
-  input[type="text"] {
-    padding: 0.5rem;
-    font-size: 1rem;
-    width: 250px;
-    margin-right: 0.5rem;
-  }
-  
-  input[type="submit"], .resetbutton {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #8d6e63;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover, .resetbutton:hover {
-    background-color: #6d4c41;
-  }
-  
-  .heading2 {
-    margin: 1rem;
-    text-align: center;
-  }
-  
-  .itemcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 1rem;
-  }
-  
-  .card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 0.5rem;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .dropdownMenu {
-    margin-top: 1rem;
-  }
-  
-  details summary {
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+  @apply bg-gray-100 text-gray-800 font-sans m-0 p-0 box-border;
+}
+
+header {
+  @apply bg-brown-700 text-white py-4 text-center;
+}
+
+h1 {
+  @apply m-0 text-3xl;
+}
+
+.search-container {
+  @apply flex flex-col items-center mt-6;
+}
+
+form {
+  @apply flex mt-4;
+}
+
+input[type="text"] {
+  @apply p-2 text-base w-64 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+input[type="submit"], .resetbutton {
+  @apply py-2 px-4 text-base bg-brown-600 text-white border-none rounded-md cursor-pointer hover:bg-brown-500 focus:ring-2 focus:ring-blue-500;
+}
+
+.heading2 {
+  @apply mt-8 text-xl text-center font-semibold;
+}
+
+.itemcontainer {
+  @apply flex flex-wrap justify-center gap-4 my-6;
+}
+
+.card {
+  @apply bg-white border border-gray-300 rounded-lg p-4 shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-lg;
+  width: 280px;
+}
+
+.dropdownMenu {
+  @apply mt-4;
+}
+
+details summary {
+  @apply font-semibold cursor-pointer;
+}
+
+details p {
+  @apply mt-2 text-sm text-gray-600;
+}
