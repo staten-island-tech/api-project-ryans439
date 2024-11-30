@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOK API</title>
     <link rel="icon" type="image/x-icon" href="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/old-books-theresa-tahara.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="./CSS/styles.css" rel="stylesheet">
   </head>
-  <body class="bg-white text-black font-sans m-0 p-0 box-border">
-    <header class="bg-brown-700 text-white py-4 text-center">
-      <h1 tabindex="0" class="m-0 text-3xl">BOOK API</h1>
+
+  <body class="bg-gray-100 text-gray-900 font-roboto m-0 p-0 box-border">
+    <header class="bg-indigo-700 text-white py-6 text-center shadow-xl">
+      <h1 tabindex="0" class="m-0 text-4xl font-bold">BOOK API</h1>
       <div class="search-container flex flex-col items-center mt-6">
         <form class="form flex mt-4">
-          <input type="text" name="name" class="p-2 text-base w-64 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search for a book..." aria-label="API Search Here" />
-          <input type="submit" name="submit" value="Search" class="py-2 px-4 text-base bg-brown-600 text-white border-none rounded-md cursor-pointer hover:bg-brown-500 focus:ring-2 focus:ring-blue-500" />
-          <button type="button" class="resetbutton py-2 px-4 text-base bg-brown-600 text-white border-none rounded-md cursor-pointer hover:bg-brown-500 focus:ring-2 focus:ring-blue-500">Reset</button>
+          <input type="text" name="name" class="name p-3 text-lg w-72 mr-4 border-2 border-indigo-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black" placeholder="Search for a book..." aria-label="API Search Here" />
+          <input type="submit" name="submit" value="Search" class="py-3 px-6 text-lg bg-indigo-800 text-white border-none rounded-md cursor-pointer hover:bg-indigo-600 transition duration-300" />
+          <button type="button" class="resetbutton py-3 px-6 text-lg bg-red-600 text-white border-none rounded-md cursor-pointer hover:bg-red-500 transition duration-300 ml-2">Reset</button>
         </form>
       </div>
     </header>
-    <div class="heading2 mt-8 text-xl text-center font-semibold">
+
+    <div class="heading2 mt-12 text-2xl text-center font-semibold text-indigo-700">
       <h2 tabindex="0" id="subhead">Newly Searched Books</h2>
     </div>
-    <div class="itemcontainer flex flex-wrap justify-center gap-4 my-6"></div>
+
+    <div class="itemcontainer grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8 px-4">
+    </div>
 
     <script type="module" src="./js/main.js"></script>
   </body>
