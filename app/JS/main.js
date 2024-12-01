@@ -10,7 +10,7 @@ const DOMSelectors = {
 function cardCreator(book) {
   const cardElement = document.createElement("div");
   cardElement.classList.add("card",
-"border-gray-300",
+"border-b-gray-30","border-b-2", "border-solid", "rounded-t-lg", "w-full", "h-40", "object-cover", "mb-4",
 "shadow-[0_4px_6px_rgba(0,0,0,0.1)]",
 "w-[calc(25%_-_2rem)]",
 "bg-[white]",
@@ -37,6 +37,7 @@ function cardCreator(book) {
 "w-80");
 
   cardElement.innerHTML = `
+    
     <h3 tabindex="0" class="itemname text-xl font-semibold text-indigo-700">${book.title || "No title available"}</h3>
     <p tabindex="0" class="author text-gray-700">Author(s): ${book.author_name?.join(", ") || "Unknown"}</p>
     <p tabindex="0" class="first-publish text-gray-600">First Published: ${book.first_publish_year || "Unknown"}</p>
