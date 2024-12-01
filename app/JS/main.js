@@ -9,7 +9,32 @@ const DOMSelectors = {
 
 function cardCreator(book) {
   const cardElement = document.createElement("div");
-  cardElement.classList.add("card", "bg-white", "border", "border-gray-300", "rounded-lg", "p-4", "shadow-md", "transition-transform", "duration-300", "ease-in-out", "hover:scale-105", "hover:shadow-lg", "w-80");
+  cardElement.classList.add("card",
+"border-gray-300",
+"shadow-[0_4px_6px_rgba(0,0,0,0.1)]",
+"w-[calc(25%_-_2rem)]",
+"bg-[white]",
+"transition-all",
+"duration-[0.3s]",
+"ease-[ease-in-out]",
+"p-4",
+"rounded-xl",
+"border-2",
+"border-solid",
+"hover:translate-y-[-5px]",
+"hover:shadow-[0_6px_12px_rgba(0,0,0,0.1)]",
+"bg-white",
+"border",
+"border-gray-300",
+"rounded-lg",
+"p-4",
+"shadow-md",
+"transition-transform",
+"duration-300",
+"ease-in-out",
+"hover:scale-105",
+"hover:shadow-lg",
+"w-80");
 
   cardElement.innerHTML = `
     <h3 tabindex="0" class="itemname text-xl font-semibold text-indigo-700">${book.title || "No title available"}</h3>
