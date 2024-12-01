@@ -9,19 +9,21 @@
     <link href="./CSS/styles.css" rel="stylesheet">
   </head>
 
-  <body class="bg-gray-100 text-gray-900 font-roboto m-0 p-0 box-border">
-    <header class="bg-blue-700 text-white py-6 text-center shadow-xl">
-      <h1 tabindex="0" class="heading m-0 text-4xl font-bold">BOOK API</h1>
-      <div class="search-container flex flex-col items-center mt-6">
-        <form class="form flex mt-4">
-          <input type="text" name="name" class="name p-3 text-lg w-72 mr-4 border-2 border-indigo-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-400 text-black" placeholder="Search for a book..." aria-label="API Search Here" />
-          <input type="submit" name="submit" value="Search" class="py-3 px-6 text-lg bg-blue-500 text-white border-none rounded-md cursor-pointer hover:bg-indigo-600 transition duration-300" />
-          <button type="button" class="resetbutton py-3 px-6 text-lg bg-red-600 text-white border-none rounded-md cursor-pointer hover:bg-red-500 transition duration-300 ml-2">Reset</button>
+  <body class="bg-gradient-to-b from-indigo-100 via-blue-200 to-blue-300 text-gray-900 font-roboto m-0 p-0 box-border">
+    <header class="bg-gradient-to-r from-blue-800 via-indigo-700 to-blue-600 text-white py-8 text-center shadow-2xl rounded-b-lg">
+      <h1 tabindex="0" class="heading m-0 text-5xl font-extrabold tracking-wide">BOOK API</h1>
+      <div class="search-container flex flex-col items-center mt-8 space-y-4">
+        <form class="form flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+          <input type="text" name="name" class="name p-4 text-lg w-80 md:w-72 border-2 border-indigo-500 rounded-md focus:outline-none focus:ring-4 focus:ring-indigo-400 placeholder-gray-700" placeholder="Search for a book..." aria-label="API Search Here" />
+          <div class="flex space-x-2">
+            <input type="submit" name="submit" value="Search" class="py-3 px-6 text-lg bg-blue-500 text-white border-none rounded-md cursor-pointer hover:bg-indigo-600 transition duration-300" />
+            <button type="button" class="resetbutton py-3 px-6 text-lg bg-red-600 text-white border-none rounded-md cursor-pointer hover:bg-red-500 transition duration-300">Reset</button>
+          </div>
         </form>
       </div>
     </header>
 
-    <div class="heading2 mt-12 text-2xl text-center font-semibold text-indigo-700">
+    <div class="heading2 mt-12 text-3xl text-center font-semibold text-indigo-700">
       <h2 tabindex="0" id="subhead">Newly Searched Books</h2>
     </div>
 
