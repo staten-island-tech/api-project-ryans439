@@ -60,8 +60,8 @@ async function getBooks(query = "") {
     }
     const data = await response.json();
     const books = data.docs.slice(0, 10);
-    DOMSelectors.itemcontainer.innerHTML = "";  // Clear any previous results
-    books.forEach((book) => cardCreator(book));  // Create and append each book card
+    DOMSelectors.itemcontainer.innerHTML = "";  
+    books.forEach((book) => cardCreator(book)); 
     DOMSelectors.h1.innerHTML = books.length ? "Search Results" : "No books found.";
   } catch (error) {
     console.error(error);
