@@ -54,8 +54,8 @@ function cardCreator(book) {
 }
 
 async function getBooks(query = "") {
-  try {
-    const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
+  try{
+     const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
     if (!response.ok) {
       throw new Error("Error fetching books.");
     }
