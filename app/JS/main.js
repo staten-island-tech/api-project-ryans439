@@ -54,8 +54,8 @@ function cardCreator(book) {
 }
 
 async function getBooks(query = "") {
-  try{
-     const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
+  try {
+    const response = await fetch(`https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`);
     if (!response.ok) {
       throw new Error("Error fetching books.");
     }
@@ -67,7 +67,7 @@ async function getBooks(query = "") {
 
     DOMSelectors.h1.innerHTML = books.length ? "Search Results" : "No books found.";
   } catch (error) {
-    console.error(error);
+    console.error(error); 
     DOMSelectors.h1.innerHTML = "Error fetching book data.";
   }
 }
